@@ -20,8 +20,8 @@ struct CharactersView: View {
                 .padding()
                 ScrollView {
                     LazyVStack(spacing: .sizeMedium) {
-                        ForEach(viewModel.charterers) { character in
-                            CharacterRowView(character: character) 
+                        ForEach(viewModel.characters) { character in
+                            CharacterRowView(character: character)
                             .onTapGesture {
                                 appRouter.routeToCharacter(character)
                             }

@@ -11,11 +11,11 @@ import XCTest
 @MainActor
 final class CharactersViewModelTests: XCTestCase {
     
-    func test_getCharacters_success_setsCharterersAndShowsList() async {
+    func test_getCharacters_success_setsCharactersAndShowsList() async {
         let mockService = MockCharacterService()
         let viewModel = CharactersViewModel(service: mockService)
         await viewModel.getCharacters()
-        XCTAssertEqual(viewModel.charterers.count, 2)
-        XCTAssertFalse(viewModel.charterers.isEmpty)
+        XCTAssertEqual(viewModel.characters.count, 2)
+        XCTAssertFalse(viewModel.characters.isEmpty)
     }
 }

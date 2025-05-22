@@ -11,7 +11,7 @@ import OSLog
 @MainActor
 class CharactersViewModel: ObservableObject {
     
-    @Published var charterers: [CharacterModel] = []
+    @Published var characters: [CharacterModel] = []
     @Published var isShowingCharacters: Bool = false
     @Published private(set) var likedCharacters: Set<Int> = []
     private let logger = Logger()
@@ -24,7 +24,7 @@ class CharactersViewModel: ObservableObject {
     func getCharacters() async {
         switch await service.getAllCharacters() {
         case let .success(model):
-            self.charterers = model
+            self.characters = model
         case let .failure(error):
             logger.log("Failed to fetch characters: \(error)")
         }
